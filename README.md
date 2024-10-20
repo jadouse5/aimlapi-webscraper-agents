@@ -2,6 +2,9 @@
 
 This project demonstrates a multi-agent system that automates web scraping, content analysis, and summary generation using the AI/ML API. It is built using **Streamlit** for the user interface, **BeautifulSoup** for web scraping, and the **AI/ML API** for text generation and analysis.
 
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6kf1hkm9emhheo9rxsfd.png)
+
 The app enables you to dynamically change the model and modify any agent in the workflow to suit different use cases. Simply provide your AI/ML API key, and you can use any model supported by the AI/ML API.
 
 # Get your AI/ML API
@@ -177,6 +180,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Developed by: **Jad Tounsi El Azzoiani**  
 GitHub: [Jad Tounsi El Azzoiani](https://github.com/jadouse5)  
 LinkedIn: [Jad Tounsi El Azzoiani](https://linkedin.com/in/jad-tounsi-el-azzoiani)
-```
-
-This is the markdown-formatted README file for your project, following the structure you provided.
