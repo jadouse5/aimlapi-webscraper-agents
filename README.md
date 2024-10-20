@@ -4,6 +4,12 @@ This project demonstrates a multi-agent system that automates web scraping, cont
 
 The app enables you to dynamically change the model and modify any agent in the workflow to suit different use cases. Simply provide your AI/ML API key, and you can use any model supported by the AI/ML API.
 
+# Get your AI/ML API
+
+You can obtain your AI/ML API key by visiting the following link:
+
+[AI/ML API](https://aimlapi.com/?via=jad)
+
 ## Features
 
 - **Web Scraping**: Scrapes the content of a given website URL using BeautifulSoup.
