@@ -1,179 +1,176 @@
-# 🐝 OpenAI SWARM 🔍  Web Scraping Streamlit Web App and Content Analysis with Multi-Agent System
+# 🐝 Multi-Agent System for 🚀 ANY AI/ML Model: 🌐 Web Scraping & 📝 Content Analysis Powered by the 🔗 AI/ML API
 
-This project implements a multi-agent system that performs web scraping, content analysis, and summary generation using OpenAI's **Swarm framework**. The system automates the extraction and processing of information from websites, making it ideal for applications like content aggregation, market analysis, and research automation.
+This project demonstrates a multi-agent system that automates web scraping, content analysis, and summary generation using the AI/ML API. It is built using **Streamlit** for the user interface, **BeautifulSoup** for web scraping, and the **AI/ML API** for text generation and analysis.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/c26y9df2m946k0xf0w4c.png)
+The app enables you to dynamically change the model and modify any agent in the workflow to suit different use cases. Simply provide your AI/ML API key, and you can use any model supported by the AI/ML API.
 
----
+## Features
 
-## Table of Contents
-1. [Author](#author)
-2. [Introduction](#introduction)
-3. [Prerequisites](#prerequisites)
-4. [Installation](#installation)
-5. [Running the Project](#running-the-project)
-6. [Credits](#credits)
-7. [Conclusion](#conclusion)
-8. [License](#license)
+- **Web Scraping**: Scrapes the content of a given website URL using BeautifulSoup.
+- **Content Analysis**: Analyzes the scraped content to extract key insights using the AI/ML API.
+- **Summary Generation**: Generates a detailed summary of the analyzed content.
+- **Streamlit UI**: Interactive user interface that allows users to enter the website URL and view the generated report.
+- **Flexible AI Models**: Supports any model from the AI/ML API. You can change the model used for content analysis and summary generation dynamically.
+- **Agent Customization**: Modify the behavior of each agent (scraping, analyzing, summarizing) by changing the instructions, functions, or models.
 
----
+## How It Works
 
-## Author
-This project was developed by **Jad Tounsi El Azzoiani**, a passionate machine learning and artificial intelligence enthusiast focused on efficient computing, AI-based web scraping, and automation. My goal is to explore cutting-edge AI technologies and contribute to the open-source community by sharing knowledge and innovative solutions.
+1. **AI/ML API Key Input**
+   - The app dynamically sets the API key using an input field. The key is stored in the environment and used for making API calls to the AI/ML API.
 
-- **GitHub**: [Jad Tounsi El Azzoiani](https://github.com/jadouse5)
-- **LinkedIn**: [Jad Tounsi El Azzoiani](https://www.linkedin.com/in/jad-tounsi-el-azzoiani-87499a21a/)
+2. **Web Scraping**
+   - The app scrapes the provided website URL using BeautifulSoup and extracts the text content from the website's HTML.
 
----
+3. **Content Analysis**
+   - The scraped content is analyzed by the AI/ML API using a chat completion model to extract key insights.
 
-## Introduction
-This project demonstrates the implementation of a **multi-agent system** capable of performing web scraping, analyzing the scraped data, and generating summaries. Built using **OpenAI's Swarm framework**, the system can automatically scrape data from websites, process it, and generate concise reports. The workflow is ideal for use cases where real-time content extraction and analysis are critical, such as:
-- **Content aggregation**
-- **Market research**
-- **Data analysis for research automation**
+4. **Summary Generation**
+   - A detailed summary is generated using the AI/ML API based on the content analysis.
 
----
-
-## Prerequisites
-Before running the project, ensure you have the following dependencies installed:
-
-- Python 3.10+
-- **Streamlit** - for building the interactive web app.
-- **OpenAI API Key** - required for accessing the Swarm framework.
-- **BeautifulSoup** - for web scraping.
-- **Requests** - for handling HTTP requests.
-- **dotenv** - for managing environment variables.
-
-These tools are essential for running the multi-agent system and performing web scraping and analysis.
-
----
+5. **Download Report**
+   - The final summary can be downloaded as a text file directly from the Streamlit interface.
 
 ## Installation
 
-### Step 1: Install Python
-Make sure **Python 3.10+** is installed. You can download it from the official [Python website](https://www.python.org/downloads/).
+### Prerequisites
 
-### Step 2: Set Up a Virtual Environment
-To isolate project dependencies, it's a good practice to create a virtual environment. Follow these steps:
+- Python 3.10+
+- Streamlit for the interactive web interface.
+- BeautifulSoup for web scraping.
+- Requests for handling HTTP requests.
+- AI/ML API Key for making API calls.
 
-1. Open a terminal and navigate to your project directory.
-2. Create a virtual environment named `myenv`:
+### Steps
 
-   ```bash
-   python -m venv myenv
-   ```
+1. **Clone the Repository:**
 
-3. Activate the virtual environment:
+    ```bash
+    git clone https://github.com/jadouse5/aimlapi-webscraper-agents.git
+    cd aimlapi-webscraper-agents
+    ```
 
-   - **On macOS/Linux**:
-   
-     ```bash
-     source myenv/bin/activate
-     ```
-   
-   - **On Windows**:
-   
-     ```bash
-     myenv\Scripts\activate
-     ```
+2. **Set Up a Virtual Environment:**
 
-### Step 3: Install Jupyter (Optional)
-If you want to run or develop the project using Jupyter notebooks, install JupyterLab within the virtual environment:
+    ```bash
+    python3 -m venv myenv
+    source myenv/bin/activate  # On macOS/Linux
+    myenv\Scripts\activate  # On Windows
+    ```
 
-```bash
-pip install jupyterlab
+3. **Install Required Packages:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Set Up API Keys**:  
+   Create a `.env` file in the project root and add your AI/ML API key:
+
+    ```bash
+    echo "AIMLAPI_API_KEY=your-api-key-here" > .env
+    ```
+
+5. **Run the Application:**
+
+    ```bash
+    streamlit run app.py
+    ```
+
+## Usage
+
+1. **Open the Web Interface**:  
+   Once the application is running, it will open in your default browser. If not, go to [http://localhost:8501](http://localhost:8501) manually.
+
+2. **Set Your AI/ML API Key**:  
+   Input your AI/ML API Key in the text box to authenticate and allow the app to access the API.
+
+3. **Input Website URL**:  
+   Enter the URL of the website you want to scrape in the provided input box.
+
+4. **Run Workflow**:  
+   Click the "Run Workflow" button to start scraping the website, analyzing its content, and generating a summary report.
+
+5. **Modify Models or Agents**:  
+   You can modify the AI models used in each agent by adjusting the code, allowing you to experiment with different models for scraping, analysis, or summarizing.
+
+6. **Download Report**:  
+   Once the workflow completes, you can download the generated report by clicking the "Download Report" button.
+
+## Key Components
+
+1. **Web Scraping**:  
+   Scrapes the text content from the provided website URL using BeautifulSoup.
+
+2. **Content Analysis**:  
+   The scraped content is analyzed using the AI/ML API, extracting key insights.
+
+3. **Summary Generation**:  
+   A detailed summary is generated based on the analysis using another AI model call.
+
+## Code Example
+
+Here’s an example of how the system orchestrates the workflow:
+
+```python
+def orchestrate_workflow(client, url):
+    # Step 1: Scrape the website
+    scraped_content = scrape_website(url)
+
+    # Step 2: Analyze the scraped content
+    messages = [
+        {"role": "system", "content": "You are an agent that analyzes content and extracts key insights."},
+        {"role": "user", "content": f"Analyze the following content: {scraped_content}"}
+    ]
+    response = client.chat.completions.create(
+        model="gpt-4o-mini-2024-07-18",
+        messages=messages
+    )
+    analysis_summary = response.choices[0].message.content
+
+    # Step 3: Write the summary based on the analysis
+    messages = [
+        {"role": "system", "content": "You are an agent that writes summaries of research."},
+        {"role": "user", "content": f"Write a summary based on this analysis: {analysis_summary}"}
+    ]
+    response = client.chat.completions.create(
+        model="gpt-4o-mini-2024-07-18",
+        messages=messages
+    )
+    final_summary = response.choices[0].message.content
+
+    return final_summary
 ```
 
-### Step 4: Install the Required Python Packages
-Once your virtual environment is active, install the necessary dependencies for the project:
+## Customization
 
-```bash
-pip install streamlit beautifulsoup4 requests python-dotenv
-pip install git+https://github.com/openai/swarm.git
-```
+### Using Different Models
 
-### Step 5: Set Up the OpenAI API Key
-1. In the project directory, create a `.env` file to store environment variables.
-2. Add the following line to the `.env` file, replacing `your-api-key-here` with your actual OpenAI API key:
+You can change the models used in the agents by modifying the `model` parameter in the `orchestrate_workflow` function. The AI/ML API supports multiple models, allowing you to experiment with different models for each task:
 
-```ini
-OPENAI_API_KEY=your-api-key-here
-```
+- **Scraping Agent**: Modify the scraping agent to handle different types of content or preprocess the data differently.
+- **Analysis Agent**: Choose a model that best suits your analysis needs, such as summarization or topic extraction.
+- **Summary Agent**: Use a model that generates detailed, concise, or creative summaries depending on your goal.
 
----
+### Modify Agents
 
-## Running the Project
+Each agent is highly customizable. Adjust the instructions or add new functions for more advanced workflows.
 
-Once you have set up the environment and installed the required packages, follow these steps to run the project:
+## Future Improvements
 
-1. **Activate the virtual environment**:
-   
-   - **On macOS/Linux**:
-   
-     ```bash
-     source myenv/bin/activate
-     ```
-
-   - **On Windows**:
-   
-     ```bash
-     myenv\Scripts\activate
-     ```
-
-2. **Run the Streamlit app**:
-   
-   Start the Streamlit app by running:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-3. **Access the app in your browser**:
-
-   Once the app is running, go to the local URL provided by Streamlit (typically `http://localhost:8501`).
-
-4. **Run the workflow**:
-
-   - Enter the URL of the website you want to scrape in the input field.
-   - Click the **Run Workflow** button to start the scraping and analysis process.
-   - View the generated summary directly in the browser once the workflow completes.
-
----
-
-### Deactivating the Virtual Environment
-When you’re done working on the project, deactivate the virtual environment by running:
-
-```bash
-deactivate
-```
-
-### Key Updates:
-- **Virtual Environment Setup**: Instructions for creating and activating a virtual environment (`myenv`) are added to ensure clean package management.
-- **Deactivation**: Included a section on how to deactivate the environment after use.
-
-This should help ensure the project runs in a controlled environment without conflicts with other Python installations or packages. Let me know if you need any further improvements!
-
-## Credits
-This project makes use of OpenAI’s **Swarm framework** for multi-agent orchestration. You can learn more about Swarm on GitHub:
-
-- **Swarm GitHub Repository**: [OpenAI Swarm](https://github.com/openai/swarm)
-
----
-
-## Conclusion
-This project illustrates the power of multi-agent systems in automating web scraping and content analysis tasks. By leveraging **OpenAI’s Swarm framework**, we created a highly efficient, flexible system capable of extracting valuable insights from websites. The project is a stepping stone towards more complex AI-driven systems for automating data extraction and analysis.
-
----
+- **Advanced Scraping**: Improve the scraper to handle dynamic content (e.g., JavaScript-heavy sites).
+- **More Detailed Analysis**: Expand the analysis to include sentiment analysis or categorization.
+- **Multilingual Support**: Extend the app to support scraping, analyzing, and summarizing content in multiple languages.
+- **CAPTCHA Handling**: Add support for bypassing or manually entering CAPTCHAs when scraping protected websites.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-Feel free to reach out for collaboration or to discuss this project further:
 
-- **GitHub**: [Jad Tounsi El Azzoiani](https://github.com/jadouse5)
-- **LinkedIn**: [Jad Tounsi El Azzoiani](https://www.linkedin.com/in/jad-tounsi-el-azzoiani-87499a21a/)
+Developed by: **Jad Tounsi El Azzoiani**  
+GitHub: [Jad Tounsi El Azzoiani](https://github.com/jadouse5)  
+LinkedIn: [Jad Tounsi El Azzoiani](https://linkedin.com/in/jad-tounsi-el-azzoiani)
+```
 
----
+This is the markdown-formatted README file for your project, following the structure you provided.
